@@ -18,7 +18,7 @@ runPluginOnProject () {
     while IFS= read -u3 -r line
     do 
 	echo "========= run NIODetector in the project $1:$line"
-	mvn edu.illinois:NIODetector:rerun -pl :$line -Drat.skip=true -Dlicense.skip=true | tee ./.runNIODetector/logs/$line.log
+	mvn anonymized.path:Plugin:rerun -pl :$line -Drat.skip=true -Dlicense.skip=true | tee ./.runNIODetector/logs/$line.log
 	log_file=./.runNIODetector/logs/$line.log
 	last_successful_line=$(grep '\[ *[0-9]* tests successful *\]' "$log_file" | tail -n 1)
 	successful_tests=$(echo "$last_successful_line" | awk '{print $2}')
