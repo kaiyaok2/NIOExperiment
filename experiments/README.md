@@ -17,7 +17,7 @@ This folder contains the scripts and results of our evaluation as described in t
 1. **Run the Plugin at Scale**:
    - To run the plugin on all projects listed in `projects.txt`, execute the following command:
      ```sh
-     ./runPluginAtScale.sh
+     ./runPluginAtScale.sh projects.txt
      ```
 
 2. **Collect NIO Information**:
